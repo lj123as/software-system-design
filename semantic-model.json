@@ -1,0 +1,17 @@
+{
+  "id": "software-system-design",
+  "owner_component": "software-system",
+  "model": "software_system.design_model_provider",
+  "version": "1",
+  "description": "Traditional / general-purpose software system Design Model provider (v1 skeleton): System/Component/Module/Interface/DataModel/Runtime/Deployment/Dependency/ADR/ProjectionTarget.",
+  "capabilities": ["schema", "recognize", "extract", "validate", "explain", "proposePatch", "project"],
+  "operations": {
+    "schema": {"status": "skeleton", "module": null, "function": null},
+    "recognize": {"status": "skeleton", "module": null, "function": null},
+    "extract": {"status": "skeleton", "module": null, "function": null},
+    "validate": {"status": "skeleton", "module": null, "function": null},
+    "explain": {"status": "skeleton", "module": null, "function": null},
+    "proposePatch": {"status": "skeleton", "module": null, "function": null},
+    "project": {"status": "skeleton", "module": null, "function": null}
+  }
+}

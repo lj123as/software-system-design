@@ -1,0 +1,9 @@
+# Software System 组件声明（传统/通用软件系统 Design Model owner）
+id: software-system
+version: 0.1.0
+provides:
+  - software_system.schema        # 骨架对象定义 SSOT（System/Component/Module/Interface/DataModel/Runtime/Deployment/Dependency/ADR/ProjectionTarget）
+  - software_system.design_model  # Design Model Provider 契约（recognize/extract/validate/explain/proposePatch/project；v1 skeleton）
+  - software_system.projection    # ProjectionTarget 投影契约（预留）
+requires: []
+adapter: []                       # v1 骨架：无可插拔后端；模型实现按 docs/plans 分阶段落地
