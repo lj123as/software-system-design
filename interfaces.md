@@ -9,9 +9,9 @@
 
 | Capability | Status | Description |
 | --- | --- | --- |
-| software_system.schema | v1 skeleton | System/Component/Module/Interface/DataModel/Runtime/Deployment/Dependency/ADR/ProjectionTarget 骨架对象定义 |
-| software_system.design_model | v1 skeleton | Design Model Provider 契约（ModelProvider 7 操作声明，recognize/extract/validate/explain/proposePatch/project 预留） |
-| software_system.projection | reserved | ProjectionTarget 投影契约 |
+| software_system.schema | v1 | System/Component/Module/Interface/DataModel/Runtime/Deployment/Dependency/ADR/ProjectionTarget 骨架对象定义（design_model.schema） |
+| software_system.design_model | v1 | Design Model Provider 七操作实现（design_model.py：recognize / extract / validate / explain / propose_patch / project） |
+| software_system.projection | v1 | ProjectionTarget 投影契约（design_model.project 产出 SoftwareSystemProjectionDraft/v1） |
 
 ## Design Model Skeleton（第一版）
 
@@ -33,16 +33,17 @@
 - provider id：`software-system-design`
 - model capability：`software_system.design_model_provider`
 - 声明文件：`action/software-system/semantic-model.json`
+ - 实现文件：`action/software-system/design_model.py`（七操作均为 v1 实现，draft-first）
 
 | Operation | v1 状态 | 说明 |
 | --- | --- | --- |
-| schema | skeleton | 返回 10 个骨架对象定义与边界 |
-| recognize | reserved | 从 AIHW CanvasSnapshot / ContentSelection 识别软件系统模型实例 |
-| extract | reserved | 抽取 System/Component/Module/Interface 视图 |
-| validate | reserved | 校验模型视图（结构化 issues） |
-| explain | reserved | 解释组件、依赖、架构决策 |
-| proposePatch | reserved | 生成模型补丁提案（draft-first） |
-| project | reserved | 投影到 ProjectionTarget（architecture/doc/artifact） |
+| schema | implemented | 返回 10 个骨架对象定义与边界 |
+| recognize | implemented | 从 AIHW CanvasSnapshot / ContentSelection 识别软件系统模型实例（无组件时返回 exit 1） |
+| extract | implemented | 抽取 SoftwareSystemView/v1（components + dependencies） |
+| validate | implemented | 校验模型视图（重复 id / dangling dependency，结构化 issues） |
+| explain | implemented | 解释组件、依赖、架构决策（markdown） |
+| proposePatch | implemented | 生成 SoftwareSystemProposal/v1（draft-first） |
+| project | implemented | 投影到 ProjectionTarget（SoftwareSystemProjectionDraft/v1） |
 
 ## 边界
 

@@ -10,7 +10,7 @@
 | P1 action 骨架 | action/software-system/component.yaml（software_system.schema / design_model / projection）+ interfaces.md（10 骨架对象 + ModelProvider 契约） | 完成 |
 | P2 声明 | action/software-system/semantic-model.json（provider id: software-system-design，7 操作 skeleton） | 完成 |
 | P3 计划 | docs/plans 落地顺序与边界检查项 | 完成 |
-| P4 后续 | schema 细化 → recognize/extract/validate → explain/proposePatch → project（ProjectionTarget） | 待定 |
+| P4 实现 | design_model.py 七操作实现（schema/recognize/extract/validate/explain/propose_patch/project）+ tests/test_design_model.py；组件转为 git submodule（remote: lj123as/software-system） | 完成 |
 
 ## 边界检查项
 
@@ -30,3 +30,4 @@
 | --- | --- |
 | P0-P3 | 2026-08-26 完成 |
 | 骨架断言 | test_semantic_model_host.py::test_software_system_component_skeleton_declares_traditional_design_model 通过 |
+| P4 | 七操作 v1 实现 + 7 项单元测试通过；submodule 注册完成 |

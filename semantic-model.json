@@ -3,15 +3,15 @@
   "owner_component": "software-system",
   "model": "software_system.design_model_provider",
   "version": "1",
-  "description": "Traditional / general-purpose software system Design Model provider (v1 skeleton): System/Component/Module/Interface/DataModel/Runtime/Deployment/Dependency/ADR/ProjectionTarget.",
+  "description": "Traditional / general-purpose software system Design Model provider (v1): System/Component/Module/Interface/DataModel/Runtime/Deployment/Dependency/ADR/ProjectionTarget; seven ModelProvider operations implemented in design_model.py.",
   "capabilities": ["schema", "recognize", "extract", "validate", "explain", "proposePatch", "project"],
   "operations": {
-    "schema": {"status": "skeleton", "module": null, "function": null},
-    "recognize": {"status": "skeleton", "module": null, "function": null},
-    "extract": {"status": "skeleton", "module": null, "function": null},
-    "validate": {"status": "skeleton", "module": null, "function": null},
-    "explain": {"status": "skeleton", "module": null, "function": null},
-    "proposePatch": {"status": "skeleton", "module": null, "function": null},
-    "project": {"status": "skeleton", "module": null, "function": null}
+    "schema": {"module": "design_model", "function": "schema"},
+    "recognize": {"module": "design_model", "function": "recognize"},
+    "extract": {"module": "design_model", "function": "extract"},
+    "validate": {"module": "design_model", "function": "validate"},
+    "explain": {"module": "design_model", "function": "explain"},
+    "proposePatch": {"module": "design_model", "function": "propose_patch"},
+    "project": {"module": "design_model", "function": "project"}
   }
 }
