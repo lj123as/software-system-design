@@ -5,8 +5,11 @@ dir:
   - action/software-system_dev
 version: 0.1.0
 provides:
+  - action.create
   - software_system.schema        # 骨架对象定义 SSOT（System/Component/Module/Interface/DataModel/Runtime/Deployment/Dependency/ADR/ProjectionTarget）
   - software_system.design_model  # Design Model Provider 契约（recognize/extract/validate/explain/proposePatch/project；v1 skeleton）
   - software_system.projection    # ProjectionTarget 投影契约（预留）
+action_types:
+  - software-system
 requires: []
 adapter: []                       # v1 骨架：无可插拔后端；模型实现按 docs/plans 分阶段落地
