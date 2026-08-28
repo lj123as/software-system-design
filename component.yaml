@@ -1,5 +1,8 @@
 # Software System 组件声明（传统/通用软件系统 Design Model owner）
 id: software-system
+dir:
+  - cognition/software-system_dev
+  - action/software-system_dev
 version: 0.1.0
 provides:
   - software_system.schema        # 骨架对象定义 SSOT（System/Component/Module/Interface/DataModel/Runtime/Deployment/Dependency/ADR/ProjectionTarget）
