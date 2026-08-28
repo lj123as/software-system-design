@@ -47,7 +47,7 @@
 
 ## 边界
 
-- software-system 拥有传统软件系统 Design Model；不拥有 Agentic Software 范式（agentic-software），不承担 AIHW 语义宿主职责。
+- software-system_dev 拥有传统软件系统 Design Model；不拥有 Agentic Software 范式（agentic-software），不承担 AIHW 语义宿主职责。
 - 对 AIHW canvas 的任何写回必须走 AIHW ElementMutationProposal / approval。
 - 禁止反模式（只允许出现在禁止规则段落中）：
   - "AIHW owns Software Design Model / AIHW owns Semantic Model"

@@ -1,5 +1,5 @@
-# Software System 组件声明（传统/通用软件系统 Design Model owner）
-id: software-system
+﻿# Software System 组件声明（传统/通用软件系统 Design Model owner）
+id: software-system_dev_dev
 dir:
   - cognition/software-system_dev
   - action/software-system_dev
