@@ -1,9 +1,9 @@
 # Software System Interfaces（传统通用软件系统 Design Model）
 
-> 语义 SSOT：[[cognition/software-system/README]]
+> 语义 SSOT：[[cognition/software-system_dev/README]]
 > AIHW 边界：[[action/aihw/interfaces]]
 > Host 消费：[[cognition/ai-workspace/07-semantic-model-host]]
-> 分阶段落地：[[action/software-system/docs/plans]]
+> 分阶段落地：[[action/software-system_dev/docs/plans]]
 
 ## Capability List
 
@@ -32,8 +32,8 @@
 
 - provider id：`software-system-design`
 - model capability：`software_system.design_model_provider`
-- 声明文件：`action/software-system/semantic-model.json`
- - 实现文件：`action/software-system/design_model.py`（七操作均为 v1 实现，draft-first）
+- 声明文件：`action/software-system_dev/semantic-model.json`
+ - 实现文件：`action/software-system_dev/design_model.py`（七操作均为 v1 实现，draft-first）
 
 | Operation | v1 状态 | 说明 |
 | --- | --- | --- |
