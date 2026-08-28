@@ -12,6 +12,7 @@
 | software_system.schema | v1 | System/Component/Module/Interface/DataModel/Runtime/Deployment/Dependency/ADR/ProjectionTarget 骨架对象定义（design_model.schema） |
 | software_system.design_model | v1 | Design Model Provider 七操作实现（design_model.py：recognize / extract / validate / explain / propose_patch / project） |
 | software_system.projection | v1 | ProjectionTarget 投影契约（design_model.project 产出 SoftwareSystemProjectionDraft/v1） |
+| action.create | v1 | Creator Capability：ActionSpecification v1 -> SoftwareSystemInstance/v1（design_model.create_instance；action_type=software-system） |
 
 ## Design Model Skeleton（第一版）
 

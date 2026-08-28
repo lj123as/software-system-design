@@ -105,3 +105,29 @@ def test_project_emits_projection_draft():
     assert result["exit"] == 0, result
     assert result["projection"]["type"] == "SoftwareSystemProjectionDraft/v1"
     assert "Order System" in result["projection"]["content"]
+
+
+def test_create_builds_system_instance_from_spec():
+    design_model = load_design_model()
+    spec = {
+        "spec_id": "spec-001",
+        "action_type": "software-system",
+        "intent": "create",
+        "subject": "stock-analysis-system",
+        "input": {"requirements": "build stock analysis system"},
+    }
+    result = design_model.create_instance(spec)
+    assert result["exit"] == 0, result
+    inst = result["instance"]
+    assert inst["instance_type"] == "SoftwareSystemInstance/v1"
+    assert inst["system"]["name"] == "stock-analysis-system"
+    assert inst["system"]["status"] == "created"
+    assert inst["state"] == "created"
+    assert inst["provider"] == "software-system_dev"
+    assert inst["components"] == []
+
+def test_create_rejects_non_software_system_type():
+    design_model = load_design_model()
+    result = design_model.create_instance({"action_type": "agent", "subject": "x"})
+    assert result["exit"] == 2, result
+    assert "software-system" in result["error"]

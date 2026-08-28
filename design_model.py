@@ -175,3 +175,36 @@ def project(model_view, target=None, vault=None):
         "content": "\n".join(lines),
     }
     return {"exit": 0, "projection": projection}
+
+
+def create_instance(spec, vault=None):
+    """Create a SoftwareSystemInstance from an approved ActionSpecification v1.
+
+    This is the creator-capability entry for action_type=software-system:
+    materializes the spec into a System skeleton (instance_type, system, components).
+    Does not touch AIHW canvas; write-backs go through AIHW proposals.
+    """
+    spec = spec or {}
+    atype = str(spec.get("action_type", "")).strip()
+    if atype != "software-system":
+        return {"exit": 2, "error": "create_instance only supports action_type=software-system; got: " + atype}
+    system_id = "sys-" + (str(spec.get("subject", "")) or "untitled")
+    instance = {
+        "instance_type": "SoftwareSystemInstance/v1",
+        "spec_id": str(spec.get("spec_id", "")),
+        "action_type": atype,
+        "intent": str(spec.get("intent", "create")),
+        "subject": str(spec.get("subject", "")),
+        "provider": "software-system_dev",
+        "state": "created",
+        "system": {
+            "id": system_id,
+            "name": str(spec.get("subject", "")),
+            "version": "0.1.0",
+            "boundaries": [],
+            "status": "created",
+        },
+        "components": [],
+        "input": spec.get("input") or {},
+    }
+    return {"exit": 0, "instance": instance}
