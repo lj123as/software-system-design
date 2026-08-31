@@ -128,6 +128,6 @@ def test_create_builds_system_instance_from_spec():
 
 def test_create_rejects_non_software_system_type():
     design_model = load_design_model()
-    result = design_model.create_instance({"action_type": "agent", "subject": "x"})
+    result = design_model.create_instance({"action_type": "agentic-software", "subject": "x"})
     assert result["exit"] == 2, result
     assert "software-system" in result["error"]
