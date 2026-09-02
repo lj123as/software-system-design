@@ -23,3 +23,9 @@
 - internal provider returns ViewModel/v1 nodes and edges matching components/dependencies.
 - python -m pytest action/software-system_dev/tests/ -q passes.
 
+## Status Update — 2026-09-02
+
+- Done: software-system_dev remains the owner of provider-neutral ArchitectureViewSpec/v1.
+- Done: archify is now an external provider option for the architecture view domain and returns normalized ViewModel/v1 for AIHW materialization.
+- Kept boundary: Archify-specific IR is generated inside action/archify; it is not added to ArchitectureViewSpec/v1.
+- Next: add richer SoftwareSystemView extraction only when real component/dependency facts are available.

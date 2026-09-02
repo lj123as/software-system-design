@@ -8,6 +8,6 @@
   },
   "providers": [
     {"id": "internal", "kind": "internal", "status": "implemented"},
-    {"id": "archify", "kind": "external", "status": "phase-1-preview"}
+    {"id": "archify", "kind": "external", "status": "implemented", "output": "ExternalView + ViewModel/v1"}
   ]
 }
