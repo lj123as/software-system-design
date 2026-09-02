@@ -29,3 +29,9 @@
 - Done: archify is now an external provider option for the architecture view domain and returns normalized ViewModel/v1 for AIHW materialization.
 - Kept boundary: Archify-specific IR is generated inside action/archify; it is not added to ArchitectureViewSpec/v1.
 - Next: add richer SoftwareSystemView extraction only when real component/dependency facts are available.
+
+## Status Update - 2026-09-03
+
+- Done: Archify-specific ids/layout are produced inside action/archify and exposed as provider_ir metadata.
+- Done: ArchitectureViewSpec remains provider-neutral; software-system_dev still owns architecture view semantics.
+- Next: real SoftwareSystemView extraction should be added only when project facts are available.
