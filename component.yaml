@@ -9,6 +9,7 @@ provides:
   - software_system.schema        # 骨架对象定义 SSOT（System/Component/Module/Interface/DataModel/Runtime/Deployment/Dependency/ADR/ProjectionTarget）
   - software_system.design_model  # Design Model Provider 契约（recognize/extract/validate/explain/proposePatch/project；v1 skeleton）
   - software_system.projection    # ProjectionTarget 投影契约（预留）
+  - software_system.architecture_profile  # 按系统类型的 Architecture Profile（预留骨架，v1 reserved）
 action_types:
   - software-system
 requires: []
