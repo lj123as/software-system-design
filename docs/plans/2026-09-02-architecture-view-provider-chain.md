@@ -34,4 +34,5 @@
 
 - Done: Archify-specific ids/layout are produced inside action/archify and exposed as provider_ir metadata.
 - Done: ArchitectureViewSpec remains provider-neutral; software-system_dev still owns architecture view semantics.
+- Done: real AI Workspace smoke materialized a SoftwareSystemView/v1 sample through archify into AIHW with 4 nodes, 3 edges, and visible SVG output.
 - Next: real SoftwareSystemView extraction should be added only when project facts are available.
