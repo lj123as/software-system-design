@@ -1,6 +1,6 @@
 {
   "id": "architecture",
-  "owner_component": "software-system_dev",
+  "owner_component": "software-system-design",
   "view_types": ["architecture"],
   "spec_operations": {
     "create": {"module": "architecture_view", "function": "create_spec"},

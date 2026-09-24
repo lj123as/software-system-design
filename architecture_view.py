@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Architecture ViewSpec owned by software-system_dev.
+"""Architecture ViewSpec owned by software-system-design.
 
 This module selects what to show for an architecture view. It deliberately
 does not know Archify-specific IR; providers adapt this neutral spec.
@@ -42,7 +42,7 @@ def create_spec(payload, vault=None):
             "schema_version": SPEC_VERSION,
             "view_type": "architecture",
             "subject": subject,
-            "scope": payload.get("scope") or {"source": "software-system_dev"},
+            "scope": payload.get("scope") or {"source": "software-system-design"},
             "components": components,
             "dependencies": dependencies,
         },
@@ -63,4 +63,4 @@ def internal_architecture_provider(spec, vault=None):
         for d in (spec.get("dependencies") or [])
         if d.get("source") and d.get("target")
     ]
-    return {"exit": 0, "view_model": {"schema_version": VIEW_MODEL_VERSION, "view_type": "architecture", "nodes": nodes, "edges": edges, "layout": layout, "metadata": {"owner": "software-system_dev"}, "source_spec": spec}}
+    return {"exit": 0, "view_model": {"schema_version": VIEW_MODEL_VERSION, "view_type": "architecture", "nodes": nodes, "edges": edges, "layout": layout, "metadata": {"owner": "software-system-design"}, "source_spec": spec}}

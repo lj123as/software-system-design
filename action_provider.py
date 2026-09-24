@@ -2,7 +2,7 @@
 """Software System action provider (v1): runtime face of the Type Capability component.
 
 create/update/execute/validate are invoked by K-Action_orchestrator action_ops.py
-for action_type=software-system. Design-model face stays in design_model.py
+for action_type=software. Design-model face stays in design_model.py
 (schema / recognize / extract / validate / explain / propose_patch / project).
 Stdlib only.
 """
@@ -17,8 +17,8 @@ def create_instance(spec, vault=None):
     """Materialize an approved ActionSpecification into a SoftwareSystemInstance skeleton."""
     spec = spec or {}
     atype = str(spec.get("action_type", "")).strip()
-    if atype != "software-system":
-        return {"exit": 2, "error": "create_instance only supports action_type=software-system; got: " + atype}
+    if atype != "software":
+        return {"exit": 2, "error": "create_instance only supports action_type=software; got: " + atype}
     subject = str(spec.get("subject", ""))
     instance = {
         "instance_type": "SoftwareSystemInstance/v1",
@@ -26,7 +26,7 @@ def create_instance(spec, vault=None):
         "action_type": atype,
         "intent": str(spec.get("intent", "create")),
         "subject": subject,
-        "provider": "software-system_dev",
+        "provider": "software-system-design",
         "state": "created",
         "system": {"id": "sys-" + (subject or "untitled"), "name": subject or "untitled",
                    "version": "0.1.0", "boundaries": [], "status": "created"},
@@ -54,7 +54,7 @@ def execute(instance, request, vault=None):
     instance = instance or {}
     subject = str(instance.get("subject") or (request or {}).get("subject") or "")
     return {"exit": 0, "state": "done", "executed": True,
-            "note": "software-system execute stub (subject=" + subject + ")"}
+            "note": "software execute stub (subject=" + subject + ")"}
 
 
 def validate(instance, request, vault=None):
@@ -62,7 +62,7 @@ def validate(instance, request, vault=None):
     issues = []
     if not instance.get("instance_id"):
         issues.append("missing instance_id")
-    if instance.get("action_type") != "software-system":
+    if instance.get("action_type") != "software":
         issues.append("action_type mismatch")
     if issues:
         return {"exit": 2, "valid": False, "issues": issues}

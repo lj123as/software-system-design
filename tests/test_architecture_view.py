@@ -3,7 +3,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[3]
-MOD = ROOT / "action" / "software-system_dev" / "architecture_view.py"
+MOD = ROOT / "action" / "software-system-design" / "architecture_view.py"
 
 
 def load_module():

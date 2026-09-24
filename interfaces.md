@@ -1,9 +1,9 @@
 # Software System Interfaces（传统通用软件系统 Design Model）
 
-> 语义 SSOT：[[cognition/software-system_dev/README]]
+> 语义 SSOT：[[cognition/software-system-design/README]]
 > AIHW 边界：[[action/aihw/interfaces]]
 > Host 消费：[[cognition/ai-workspace/07-semantic-model-host]]
-> 分阶段落地：[[action/software-system_dev/docs/plans]]
+> 分阶段落地：[[action/software-system-design/docs/plans]]
 
 ## Capability List
 
@@ -12,7 +12,7 @@
 | software_system.schema | v1 | System/Component/Module/Interface/DataModel/Runtime/Deployment/Dependency/ADR/ProjectionTarget 骨架对象定义（design_model.schema） |
 | software_system.design_model | v1 | Design Model Provider 七操作实现（design_model.py：recognize / extract / validate / explain / propose_patch / project） |
 | software_system.projection | v1 | ProjectionTarget 投影契约（design_model.project 产出 SoftwareSystemProjectionDraft/v1） |
-| action.create | v1 | Creator Capability：ActionSpecification v1 -> SoftwareSystemInstance/v1（design_model.create_instance；action_type=software-system） |
+| action.create | v1 | Creator Capability：ActionSpecification v1 -> SoftwareSystemInstance/v1（design_model.create_instance；action_type=software） |
 
 ## Design Model Skeleton（第一版）
 
@@ -33,8 +33,8 @@
 
 - provider id：`software-system-design`
 - model capability：`software_system.design_model_provider`
-- 声明文件：`action/software-system_dev/semantic-model.json`
- - 实现文件：`action/software-system_dev/design_model.py`（七操作均为 v1 实现，draft-first）
+- 声明文件：`action/software-system-design/semantic-model.json`
+ - 实现文件：`action/software-system-design/design_model.py`（七操作均为 v1 实现，draft-first）
 
 | Operation | v1 状态 | 说明 |
 | --- | --- | --- |
@@ -48,7 +48,7 @@
 
 ## 边界
 
-- software-system_dev 拥有传统软件系统 Design Model；不拥有 Agentic Software 范式（agentic-software），不承担 AIHW 语义宿主职责。
+- software-system-design 拥有传统软件系统 Design Model；不拥有 Agentic Software 范式（agentic-software），不承担 AIHW 语义宿主职责。
 - 对 AIHW canvas 的任何写回必须走 AIHW ElementMutationProposal / approval。
 - 禁止反模式（只允许出现在禁止规则段落中）：
   - "AIHW owns Software Design Model / AIHW owns Semantic Model"

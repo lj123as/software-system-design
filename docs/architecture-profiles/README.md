@@ -20,4 +20,4 @@
 
 ## 语义 SSOT
 
-[[cognition/software-system_dev/README]]（Architecture View Specification 与内容提取职责）
+[[cognition/software-system-design/README]]（Architecture View Specification 与内容提取职责）

@@ -2,8 +2,8 @@
 """Software System Design Model provider (v1).
 
 Traditional / general-purpose software system design model owned by
-software-system_dev. The Semantic Model Host consumes this provider through
-action/software-system_dev/semantic-model.json. This model never writes AIHW
+software-system-design. The Semantic Model Host consumes this provider through
+action/software-system-design/semantic-model.json. This model never writes AIHW
 canvas canonical directly; canvas changes go through AIHW element mutation
 proposals.
 """

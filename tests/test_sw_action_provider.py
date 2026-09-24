@@ -17,18 +17,18 @@ def load_provider():
 def test_create_gate_and_skeleton():
     prov = load_provider()
     assert prov.create_instance({"action_type": "agentic-software"})["exit"] == 2
-    ok = prov.create_instance({"action_type": "software-system", "spec_id": "s1", "subject": "stock"})
+    ok = prov.create_instance({"action_type": "software", "spec_id": "s1", "subject": "stock"})
     assert ok["exit"] == 0
     inst = ok["instance"]
     assert inst["system"]["id"] == "sys-stock"
-    assert inst["provider"] == "software-system_dev"
+    assert inst["provider"] == "software-system-design"
 
 
 def test_update_validate_execute():
     prov = load_provider()
-    inst = {"instance_id": "act-1", "action_type": "software-system", "subject": "stock", "state": "created"}
+    inst = {"instance_id": "act-1", "action_type": "software", "subject": "stock", "state": "created"}
     assert prov.update_instance(inst, {"intent": "run"})["instance"]["intent"] == "run"
-    assert prov.validate({"instance_id": "act-1", "action_type": "software-system"}, {})["valid"] is True
+    assert prov.validate({"instance_id": "act-1", "action_type": "software"}, {})["valid"] is True
     assert prov.validate({"action_type": "x"}, {})["valid"] is False
     ex = prov.execute({"subject": "stock"}, {})
     assert ex["state"] == "done" and ex["executed"] is True

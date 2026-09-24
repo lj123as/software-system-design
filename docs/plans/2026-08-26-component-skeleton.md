@@ -1,14 +1,14 @@
 # Software System 组件骨架落地计划
 
-> 目标：新增 software-system_dev 组件（传统/通用软件系统 Design Model owner），与 agentic-software 区分并保持 AIHW 模型无关。
+> 目标：新增 software-system-design 组件（传统/通用软件系统 Design Model owner），与 agentic-software 区分并保持 AIHW 模型无关。
 
 ## 分阶段落地顺序
 
 | 阶段 | 内容 | 状态 |
 | --- | --- | --- |
-| P0 cognition | cognition/software-system_dev/README.md：定位、与 agentic-software 对比、Skeleton Model 表 | 完成 |
-| P1 action 骨架 | action/software-system_dev/component.yaml（software_system.schema / design_model / projection）+ interfaces.md（10 骨架对象 + ModelProvider 契约） | 完成 |
-| P2 声明 | action/software-system_dev/semantic-model.json（provider id: software-system-design，7 操作 skeleton） | 完成 |
+| P0 cognition | cognition/software-system-design/README.md：定位、与 agentic-software 对比、Skeleton Model 表 | 完成 |
+| P1 action 骨架 | action/software-system-design/component.yaml（software_system.schema / design_model / projection）+ interfaces.md（10 骨架对象 + ModelProvider 契约） | 完成 |
+| P2 声明 | action/software-system-design/semantic-model.json（provider id: software-system-design，7 操作 skeleton） | 完成 |
 | P3 计划 | docs/plans 落地顺序与边界检查项 | 完成 |
 | P4 实现 | design_model.py 七操作实现（schema/recognize/extract/validate/explain/propose_patch/project）+ tests/test_design_model.py；组件转为 git submodule（remote: lj123as/software-system） | 完成 |
 
@@ -20,8 +20,8 @@
 
 ## 验收标准
 
-1. action/software-system_dev/component.yaml 存在且 provides 含 software_system.schema、software_system.design_model、software_system.projection。
-2. action/software-system_dev/interfaces.md 明确 System / Component / Module / Interface / DataModel / Runtime / Deployment / Dependency / ADR / ProjectionTarget。
+1. action/software-system-design/component.yaml 存在且 provides 含 software_system.schema、software_system.design_model、software_system.projection。
+2. action/software-system-design/interfaces.md 明确 System / Component / Module / Interface / DataModel / Runtime / Deployment / Dependency / ADR / ProjectionTarget。
 3. host discovery 能发现 software-system-design 且 owner_component == software-system。
 
 ## 执行状态
