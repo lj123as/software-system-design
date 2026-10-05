@@ -1,0 +1,30 @@
+# View Definition — Architecture (default variant)
+# Owner: software-system-design (this component). Schema and projection semantics live here;
+# storage of the produced ViewSpec belongs to AI Workspace (.knowledge/views/).
+id: software-system-design/architecture/default
+view_type: architecture
+
+source:
+  domain: software-system-design
+
+spec_schema:
+  id: ArchitectureViewSpec
+  version: 1
+
+operations:
+  create:
+    module: architecture_view
+    function: create_spec
+  view_model:
+    module: architecture_view
+    function: internal_architecture_provider
+
+providers:
+  - id: internal
+    kind: internal
+    status: implemented
+  - id: archify
+    kind: external
+    status: implemented
+    output: ExternalView + ViewModel/v1
+
