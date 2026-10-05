@@ -18,13 +18,3 @@ operations:
   view_model:
     module: architecture_view
     function: internal_architecture_provider
-
-providers:
-  - id: internal
-    kind: internal
-    status: implemented
-  - id: archify
-    kind: external
-    status: implemented
-    output: ExternalView + ViewModel/v1
-
